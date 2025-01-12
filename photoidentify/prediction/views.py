@@ -35,7 +35,7 @@ def predict(request):
             top_5_predictions = [(pred[1], pred[2]) for pred in decoded_predictions]
             
             img_data = request.POST.get('img_data')
-            return render(request, 'home.html', {'form': form, 'prediction': prediction, 'img_data': img_data})
+            return render(request, 'home.html', {'form': form, 'top_5_predictions': top_5_predictions, 'img_data': img_data})
     
     else:
         form = ImageUploadForm()
